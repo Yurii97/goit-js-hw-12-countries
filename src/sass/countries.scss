@@ -1,0 +1,13 @@
+.container {
+  padding: 60px;
+  width: 100%;
+}
+
+.search {
+  width: 400px;
+  margin-bottom: 40px;
+  & label {
+    display: flex;
+    flex-direction: column;
+  }
+}

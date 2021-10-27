@@ -1,27 +1,12 @@
 import './sass/main.scss';
-import countryTemp from './templates/country.hbs'
-import countriesTemp from './templates/countries.hbs'
+import fetchCountries from './js/fetchCountries'
 
-const searchQuery = 'france';
+const _ = require('lodash');
 
-const resultTemplate = document.querySelector('.result')
 
-fetch(`https://restcountries.com/v2/name/${searchQuery}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(country => {
-            createTemplate(country);
-        }).catch(error => {
-            console.log(error);
-        });
-        
+const findCountryRef = document.querySelector('#find-country');
+findCountryRef.addEventListener('input', _.debounce(fetchCountries, 2000));
 
-function createTemplate(country) {
-    console.log(country);            
-    if (country.length === 1) {
-        console.log(country.length);
-        resultTemplate.insertAdjacentHTML('beforeend', countryTemp(country))
-        return;
-    } resultTemplate.insertAdjacentHTML('beforeend', countriesTemp(country))
-}
+
+
+

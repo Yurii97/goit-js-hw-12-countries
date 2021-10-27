@@ -1,12 +1,13 @@
 import './sass/main.scss';
-import fetchCountries from './js/fetchCountries'
+import onSearch from './js/search'
 
 const _ = require('lodash');
 
+const findCountryRef = document
+    .querySelector('#find-country');
 
-const findCountryRef = document.querySelector('#find-country');
-findCountryRef.addEventListener('input', _.debounce(fetchCountries, 2000));
 
-
+findCountryRef.addEventListener('input',
+    _.debounce(onSearch, 2000));
 
 

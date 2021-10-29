@@ -8,6 +8,6 @@ const findCountryRef = document
 
 
 findCountryRef.addEventListener('input',
-    _.debounce(onSearch, 2000));
+    _.debounce(onSearch, 500));
 
 

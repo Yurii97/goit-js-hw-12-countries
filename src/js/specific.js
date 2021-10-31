@@ -8,6 +8,6 @@ export default function specificQuery() {
         text: 'Please enter a more specific query',
         shadow: true,
         stiker: false,
-        delay: 3000,
+        delay: 2000,
     });
 }

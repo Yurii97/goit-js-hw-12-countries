@@ -4,10 +4,10 @@ import onFetchError from './error'
 
 function onSearch(ev) {
     const searchQuery = ev.target.value;
-
-    fetchCountries(searchQuery)
-        .then(createTemplate)
-        .catch(onFetchError)
+    
+        fetchCountries(searchQuery)
+            .then(createTemplate)
+            .catch(onFetchError);    
 }
 
 export default onSearch;

@@ -4,10 +4,13 @@ import onFetchError from './error'
 
 function onSearch(ev) {
     const searchQuery = ev.target.value;
-    
-        fetchCountries(searchQuery)
-            .then(createTemplate)
-            .catch(onFetchError);    
+
+    // if (searchQuery === '') {
+    //     return alert('Please enter the contry name')
+    // }
+    fetchCountries(searchQuery)
+        .then(createTemplate)
+        .catch(onFetchError);
 }
 
 export default onSearch;
